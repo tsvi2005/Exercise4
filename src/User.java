@@ -1,30 +1,34 @@
 public class User {
-    private String userName;
+    private String username;
     private String password;
     private String phone;
-    private boolean type;
+    private boolean regular;
 
     public String toString() {
-        return "User:" +
-                "username='" + userName + '\'' +
-                // ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", type='" + type + '\'' ;
+        return username + " " + phone + "(" + type(regular) + ")";
+
+    }
+    public String type (boolean regular){
+        String type = "Real estate broker";
+        if (regular){
+            type = "Regular user";
+        }
+        return  type;
     }
 
     public User(String username, String password ,String phone,boolean type){
-        this.userName=username;
+        this.username=username;
         this.password=password;
         this.phone=phone;
-        this.type=type;
+        this.regular =type;
     }
 
-    public void setUsername(String userNameame) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
     public void setPassword(String password) {
@@ -35,13 +39,12 @@ public class User {
         return password;
     }
 
-    public boolean getType() {
-        return type;
+    public boolean getRegular() {
+        return regular;
     }
 
-    public void setType(int num) {
-
-        this.type = type;
+    public void setRegular(boolean regular) {
+        this.regular = regular;
     }
 
     public String getPhone() {
@@ -51,14 +54,4 @@ public class User {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-   //* public void setPassword(String userPassword){
-   //     char[] digits = {'1','2','3','4','5','6','7','8','9','0'};
-     //   char[] strongLetters = {'%','$','_'};
-       // for (int i = 0; i < userPassword.length(); i++) {
-         //   for (int j = 0; j < ; j++) {
-                
-          //  }
-            //if (userPassword.charAt(i)==)
-        //}
-//    }
 }

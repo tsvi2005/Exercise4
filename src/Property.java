@@ -24,16 +24,15 @@ public class Property {
 
 
     public String toString() {
-        return "Property{" +
-                "address=" + address +
-                ", rooms=" + rooms +
-                ", price=" + price + "$" +
-                ", type='" + type + '\'' +
-                ", state='" + state + '\'' +
-                ", numberOfHouse=" + numberOfHouse +
-                ", floor=" + floor +
-                ", user=" + user +
-                '}';
+        if(floor==-1){
+            return  type + "- for " + state + ":" + rooms + "rooms" + "\n" + price +"$" + "\n" + "contact info " + user;
+
+        }
+        else {
+            return  type + "- for " + state + ":" + rooms + "rooms, floor" + floor + "\n" + price +"$" + "\n" + "contact info " + user;
+
+        }
+
     }
 
     public Address getAddress() {

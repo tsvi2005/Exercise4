@@ -1,21 +1,12 @@
 import java.util.Scanner;
-
 public class Main {
-        public static void main(String[] args) {
-            RealEstate realEstate=new RealEstate();
-            //realEstate.showStreets("tel-aviv");
-            //realEstate.numOfStreets("tel aviv");
-            realEstate.firstMenu();
-        }
+    public static RealEstate realEstate = new RealEstate();
 
-    }
 
-    /*  public static void main (String[]args){
-
+    public static void main(String[] args) {
         firstMenu();
     }
-    public static int firstMenu (){
-        int whichProgram=0;
+    public static void firstMenu () {
         final int createAccount = 1;
         final int logIn = 2;
         final int endPlan = 3;
@@ -29,25 +20,27 @@ public class Main {
         do {
             System.out.println(openTalk);
             userChosie = scanner.nextInt();
-        }while (!isBetween(userChosie,endPlan,createAccount));
+        } while (!isBetween(userChosie, endPlan, createAccount));
         switch (userChosie) {
             case createAccount:
-                whichProgram = createAccount;
+                realEstate.createUser();
+                firstMenu();
                 break;
             case logIn:
-                whichProgram = logIn;
+                User user= realEstate.login();
+                realEstate.secondMenu(user);
                 break;
             case endPlan:
-                whichProgram = endPlan;
+                System.out.println("goodbye");
                 break;
         }
-        return whichProgram;
+
     }
-    public static boolean isBetween(int userchoise, int highNumber , int lowNumber){
+    public static boolean isBetween ( int userchoise, int highNumber, int lowNumber){
         boolean isNotBetween = true;
-        if (userchoise>highNumber || userchoise<lowNumber){
-            isNotBetween=false;
+        if (userchoise > highNumber || userchoise < lowNumber) {
+            isNotBetween = false;
         }
         return isNotBetween;
     }
-}*/
+}
